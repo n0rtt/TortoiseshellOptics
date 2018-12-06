@@ -14,12 +14,12 @@ html {
 header {
   background-image: url('../../resources/glasses-bg.png');
   background-size: cover;
+  background-position: center;
   padding-top: 1rem;
 }
 
 header .container {
   height: 30rem;
-  position: relative;
 }
 
 #navbar {
@@ -31,6 +31,11 @@ header .container {
   font-weight: 600;
   background-color: cadetblue;
   color: white;
+  position: relative;
+}
+
+#mobile-nav {
+  display: none;
 }
 
 #company {
@@ -65,13 +70,14 @@ ul li:last-child {
   display: inline-block;
   padding: 1.5rem 5rem;
   background-color: white;
+  color: black;
   font-family: Helvetica;
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.2;
   text-transform: uppercase;
   position: absolute;
-  top: 10rem;
+  bottom: -15rem;
   right: -2rem;
 }
 
@@ -86,7 +92,7 @@ ul li:last-child {
 .feature {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 8rem;
   width: 5rem;
@@ -129,6 +135,10 @@ ul li:last-child {
   width: 35%;
 }
 
+.info p {
+  padding-left: 0.2rem;
+}
+
 .info:first-child {
   margin-right: 5%;
 }
@@ -157,4 +167,111 @@ footer img {
   content: url('../../resources/logo-black.png');
   height: 1.5rem;
   margin-right: 1rem;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 768px) {
+
+  .container {
+    width: 100%;
+  }
+
+  header {
+    padding-top: 0;
+  }
+
+  header .container {
+    height: 22rem;
+  }
+
+  #slogan {
+    padding: 0.75rem 4rem;
+    font-size: 1.33rem;
+    bottom: -7.83rem;
+    right: 2rem;
+  }
+
+  footer .container {
+    padding-right: 0;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  #mobile-nav {
+    display: flex;
+  }
+
+  #desktop-tablet-nav, #company h4 {
+    display: none;
+  }
+
+  header {
+    background-position: 20%;
+  }
+
+  header .container {
+    height: 17rem;
+  }
+
+  #slogan {
+    width: 100%;
+    bottom: -12rem;
+    right: 0;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  #features {
+    flex-direction: column;
+    align-items: center;
+    padding: 3.77rem 0;
+  }
+
+  .feature {
+    margin-right: 0;
+    margin-bottom: 1.54rem;
+    justify-content: center;
+  }
+
+  .feature:last-child {
+    margin-bottom: 0;
+  }
+
+  .feature h4 {
+    font-size: 0.77rem;
+    margin-top: 1rem;
+  }
+
+  #info {
+    flex-direction: column;
+  }
+
+  .info {
+    width: 100%;
+  }
+
+  .info-heading {
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .info:first-child {
+    margin-right: 0;
+    margin-bottom: 4rem;
+  }
+
+  footer .container {
+    justify-content: center;
+    padding: 4rem 0;
+  }
+
+  footer h4 {
+    display: none;
+  }
+
 }
